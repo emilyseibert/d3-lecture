@@ -5,18 +5,24 @@ This repo contains the slides and the practice chart used in the Intro to D3 pre
 ### To run locally
 
 1. Clone this repo into your local directory.
-
-`git clone `
+```
+git clone git@github.com:emilyseibert/d3-lecture.git
+```
 
 2. Install Live Server (https://github.com/tapio/live-server)
-`npm install -g live-server`
+```
+npm install -g live-server
+```
 
 3. Go into this directory
-
-`cd d3-lecture`
+```
+cd d3-lecture
+```
 
 4. Run the application for hot reloading.
 
-`live-server src --verbose`
+```
+live-server src --verbose
+```
 
 ### Additional exercises
