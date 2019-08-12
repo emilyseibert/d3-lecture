@@ -20,3 +20,9 @@ This repo contains the slides and the practice chart used in the Intro to D3 pre
 `live-server src --verbose`
 
 ### Additional exercises
+
+
+### Resources
+Some of the original code for this, in true D3 fashion, was adapted from these sources
+* http://elliotbentley.com/2017/08/09/a-better-way-to-structure-d3-code-es6-version.html
+* https://bl.ocks.org/gordlea/27370d1eea8464b04538e6d8ced39e89#index.html 
