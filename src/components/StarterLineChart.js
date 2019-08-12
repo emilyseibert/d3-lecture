@@ -88,6 +88,12 @@ export default class StarterLineChart {
     * 
     *  .datum(): https://animateddata.co.uk/articles/d3/datajoins/
     *   binds a single entity (in this case 'path') with a selection of data
+    * 
+    * Add CSS style to prevent fill
+    * .line {
+          fill: none;
+          stroke-width: 3;
+      }
     */
     addLine() {
       // this._chart.append()
