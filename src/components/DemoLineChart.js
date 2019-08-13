@@ -95,8 +95,6 @@ export default class LineChart {
 }
 
 
-
-
 /// Most examples are in long form, all in one html file. I've broken out this example into a class to show
 /// how D3 code will likely appear in production. See if you can align the 'long form' code with the code above.
 

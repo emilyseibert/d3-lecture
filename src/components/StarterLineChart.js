@@ -8,8 +8,16 @@ export default class StarterLineChart {
         // set args
         this.dataset = args.dataset;
         this.element = args.element;
-        this.height = args.height;
-        this.width = args.width;
+        
+        // Use the margin convention practice https://bl.ocks.org/mbostock/3019563
+        this.margin = {
+            top: 50,
+            right: 50,
+            bottom: 50,
+            left: 50
+        };
+        this.width = window.innerWidth - this.margin.left - this.margin.right; // Use the window's width 
+        this.height = window.innerHeight - this.margin.top - this.margin.bottom; // Use the window's height
 
         // initialize chart
         this.draw();
@@ -22,12 +30,15 @@ export default class StarterLineChart {
     * 2. Call createScales function
     * 3. Call addAxes function
     * 4. Call addLine function
+    * 5. Call addLinePoints function
     */
     draw() {
       // this._chart = d3.select()
       //                 .append()
-      //                 .attr("width", )
-      //                 .attr("height", );
+      //                 .attr("width", this.width + this.margin.left + this.margin.right)
+      //                 .attr("height", this.height + this.margin.top + this.margin.bottom)
+      //                 .append("g") // append <g></g> group element within <svg> and center it.
+      //                   .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
     }
 
     /*
@@ -47,10 +58,13 @@ export default class StarterLineChart {
     createScales() {
       // DOMAIN: range of values of input of data
       // RANGE: range of values of pixel space
-      // this._xScale = d3.scaleLinear()
-      //                 .domain([ ]) // input
-      //                 .range([ ]); // output
       
+      // 300px = index 20
+      // this._xScale = d3.scaleLinear()
+      //                 .domain([]) // input
+      //                 .range([]); // output
+      
+      // 200px = 0
       // this._yScale = d3.scaleLinear()
       //                 .domain([]) // input is from 0 to 1 on y axis
       //                 .range([]); // height ranges to map input to pixel range.
@@ -59,7 +73,7 @@ export default class StarterLineChart {
     /*
     * addAxes()
     * 
-    * Append x and y axex groups to chart svg.
+    * Append x and y axes groups to chart svg.
     * X axis should be on the bottom of the chart, apply class 'x axis'
     * Y axis should be on the left of the chart, apply class 'y axis'
     * 
@@ -118,4 +132,21 @@ export default class StarterLineChart {
       //          .x((data, index) => )
       //          .y((data, index) => );
     }
+
+    /*
+    * addLinePoints()
+    * 
+    * Append a circle with class "dot" at each data point. This will use .data: https://animateddata.co.uk/articles/d3/datajoins/
+    *  Binding an array of data with an array of points. 
+    *  .data().enter().append() creates an element for each data element
+    */
+    addLinePoints() {
+      // this._chart.selectAll() // even if nothing is returned, this creates a selector for future data binding
+      //       .data() // binds dataset to the selection
+      //       .enter().append() // Uses the enter().append() method to populate <circle> for each 
+      //       .attr("class", ) // Assign a class for styling
+      //       .attr("cx", (data, index) => ) // x coord of circle
+      //       .attr("cy", (data) => ) // y coord of circle
+      //       .attr("r", ) // radius of circle
+   }
 }
