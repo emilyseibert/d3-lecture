@@ -1,0 +1,5 @@
+/* Style the lines by removing the fill and applying a stroke */
+.line {
+    fill: none;
+    stroke-width: 3;
+}

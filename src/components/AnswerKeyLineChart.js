@@ -17,6 +17,7 @@ export default class LineChart {
         };
         this.width = window.innerWidth - this.margin.left - this.margin.right; // Use the window's width 
         this.height = window.innerHeight - this.margin.top - this.margin.bottom; // Use the window's height
+        this.pointColor = "black";
 
         // Add the SVG to the page 
         this.chart = d3.select(this.element)// get body HTML element
@@ -83,14 +84,32 @@ export default class LineChart {
             .attr("cx", (d, i) => this.xScale(i)) // x coord of circle
             .attr("cy", (d) => this.yScale(d.y)) // y coord of circle
             .attr("r", 5) // radius of circle
+            .on("mouseover", this.handleMouseOver)
+            .on("mouseout", this.handleMouseOut);
     }
 
+    handleMouseOver(d, i) {
+        // Use D3 to select element, change color and size
+        d3.select(this)
+            .attr("r", 10);
+    }
+
+    handleMouseOut() {
+        d3.select(this)
+            .attr("r", 5);
+    }
     // changes line color
     setColor(newColor) {
       this.chart.selectAll(".line")
         .style('stroke', newColor);
 
       this.lineColor = newColor;
+    }
+
+    setPointColor(newColor) {
+        this.chart.selectAll(".dot")
+            .style("fill", newColor);
+        this.pointColor = newColor;
     }
 }
 

@@ -26,7 +26,9 @@ live-server src --verbose
 ```
 
 ### Additional exercises
-
+1. Add a button that when clicked, changes the color of the line.
+2. Add a button that when clicked, changes the point colors.
+3. Change radius of point when hovering over point
 
 ### Resources
 Some of the original code for this, in true D3 fashion, was adapted from these sources
